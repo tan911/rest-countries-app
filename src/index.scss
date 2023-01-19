@@ -3,8 +3,16 @@
 @tailwind utilities;
 
 @layer base {
+    input {
+        @apply w-full bg-white text-input-dark-gray placeholder:text-input-dark-gray dark:text-white dark:bg-el-dark-blue dark:placeholder:text-white pl-20 py-4 shadow rounded-md md:py-5 md:pr-20 2xl:pr-40 2xl:w-fit 2xl:text-xl 2xl:placeholder:text-lg;
+    }
+
+    select {
+        @apply bg-white dark:bg-el-dark-blue font-light pl-6 pr-24 py-4 appearance-none shadow cursor-pointer rounded-md md:py-5 2xl:text-xl;
+    }
+    
     svg {
-        @apply w-4;
+        @apply w-6;
     }
 }
 
