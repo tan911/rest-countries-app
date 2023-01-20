@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import { ReactComponent as Moon } from "../../assets/moon-outline.svg";
 
 function Navigation() {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
 
   useEffect(() => {
     if (theme === "light") {
