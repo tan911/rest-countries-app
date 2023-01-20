@@ -10,6 +10,18 @@
     select {
         @apply bg-white dark:bg-el-dark-blue font-light pl-6 pr-24 py-4 appearance-none shadow cursor-pointer rounded-md md:py-5 2xl:text-xl;
     }
+
+    img {
+        @apply w-full h-2/4 object-cover rounded-tr-md rounded-tl-md;
+    }
+
+    p {
+        @apply font-medium;
+    }
+
+    span {
+        @apply font-thin;
+    }
     
     svg {
         @apply w-6;
