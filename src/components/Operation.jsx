@@ -3,18 +3,18 @@ import { useState } from "react";
 import SearchForm from "./SearchForm";
 import RegionFilter from "./RegionFilter";
 
-function Operation() {
+function Operation(props) {
   const [selectedRegion, setSelectedRegion] = useState("");
 
   // Filter
   const filterRegionHandler = (region) => {
-    console.log(region);
     setSelectedRegion(region);
+    props.onDataItem(region);
   };
 
   // Search
   const searchCountryHandler = (item) => {
-    console.log(item);
+    props.onDataItem(item);
   };
 
   return (

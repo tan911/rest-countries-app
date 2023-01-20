@@ -23,19 +23,19 @@ function RegionFilter({ onChangeFilter }) {
         >
           Filter by Region
         </option>
-        <option label="Africa" value="africa">
+        <option label="Africa" value="Africa">
           Africa
         </option>
-        <option label="America" value="america">
+        <option label="America" value="Americas">
           America
         </option>
-        <option label="Asia" value="asia">
+        <option label="Asia" value="Asia">
           Asia
         </option>
-        <option label="Europe" value="europe">
+        <option label="Europe" value="Europe">
           Europe
         </option>
-        <option label="Oceania" value="oceania">
+        <option label="Oceania" value="Oceania">
           Oceania
         </option>
       </select>

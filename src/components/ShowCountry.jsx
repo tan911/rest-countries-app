@@ -1,34 +1,17 @@
-function ShowCountry({ countriesData }) {
-  console.log(countriesData);
+import Country from "./Country";
+
+function ShowCountry({ countriesData, fdata }) {
+  const filterCountries = countriesData.filter((country) => {
+    return country.region === fdata || country.name.common === fdata;
+  });
+
+  const isCountries =
+    filterCountries.length === 0 ? countriesData : filterCountries;
+
   return (
-    <ul className="grid grid-cols-1 gap-4 mx-8">
-      {countriesData.map((country) => (
-        <li
-          key={Math.random() * country.area}
-          className="bg-white dark:bg-el-dark-blue shadow-md"
-        >
-          <a href="#country">
-            <img src={country.flags.svg} alt="" />
-            <div>
-              <h2>{country.name.common}</h2>
-              <p>
-                Population:{" "}
-                <span>
-                  {new Intl.NumberFormat("en-us").format(country.population)}
-                </span>
-              </p>
-              <p>
-                Region: <span>{country.region}</span>
-              </p>
-              <p>
-                Capital:{" "}
-                <span>
-                  {country.capital !== "" ? country.capital : "No capital"}
-                </span>
-              </p>
-            </div>
-          </a>
-        </li>
+    <ul className="grid grid-cols-1 gap-10 mx-12 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:mx-10 2xl:mx-24">
+      {isCountries.map((country) => (
+        <Country key={Math.random() * country.area} country={country} />
       ))}
     </ul>
   );
