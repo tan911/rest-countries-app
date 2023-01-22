@@ -1,20 +1,22 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 import SearchForm from "./SearchForm";
 import RegionFilter from "./RegionFilter";
+import CountriesContext from "../../context/countries";
 
-function Operation(props) {
+function Operation() {
   const [selectedRegion, setSelectedRegion] = useState("");
+  const { operationDatahandler } = useContext(CountriesContext);
 
   // Filter
   const filterRegionHandler = (region) => {
     setSelectedRegion(region);
-    props.onDataItem(region);
+    operationDatahandler(region);
   };
 
   // Search
   const searchCountryHandler = (item) => {
-    props.onDataItem(item);
+    operationDatahandler(item);
   };
 
   return (

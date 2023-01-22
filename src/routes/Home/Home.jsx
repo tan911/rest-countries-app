@@ -1,35 +1,21 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useEffect, useContext } from "react";
 
-import Operation from "../../components/Operation";
-import ShowCountry from "../../components/ShowCountry";
+import Operation from "../../components/Operate/Operation";
+import ShowCountry from "../../components/Country/ShowCountry";
+import CountriesContext from "../../context/countries";
 
 function Home() {
-  const [countries, setCountries] = useState([]);
-  const [filterData, setFilterData] = useState("");
-
-  const fetchCountries = async () => {
-    try {
-      const response = await axios.get("https://restcountries.com/v3.1/all");
-      setCountries(response.data);
-    } catch (error) {
-      console.log("error", error);
-    }
-  };
+  const { fetchCountries } = useContext(CountriesContext);
 
   useEffect(() => {
     fetchCountries();
   }, []);
 
-  const dataHandler = (data) => {
-    setFilterData(data);
-  };
-
   return (
     <main>
-      <Operation onDataItem={dataHandler} />
+      <Operation />
       <div className="my-10 2xl:my-16">
-        <ShowCountry countriesData={countries} fdata={filterData} />
+        <ShowCountry />
       </div>
     </main>
   );

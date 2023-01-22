@@ -1,4 +1,4 @@
-import { ReactComponent as Chevron } from "../assets/chevron-down-outline.svg";
+import { ReactComponent as Chevron } from "../../assets/chevron-down-outline.svg";
 
 function RegionFilter({ onChangeFilter }) {
   const selectedRegion = (e) => {

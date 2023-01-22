@@ -1,10 +1,19 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 
+import CountriesContext from "../../context/countries";
+
 function Country({ country }) {
+  const { countryDetailed } = useContext(CountriesContext);
+
+  const countryDetailedHandler = () => {
+    countryDetailed(country.name.common);
+  };
+
   return (
     <>
       <li className="inline-table bg-white h-fit dark:bg-el-dark-blue shadow-md rounded-br-md rounded-bl-md">
-        <Link to="/country">
+        <Link to="/country" onClick={countryDetailedHandler}>
           <div className="h-2/4 overflow-hidden">
             <img
               src={country.flags.svg}

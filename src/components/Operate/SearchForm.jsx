@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ReactComponent as SearchIcon } from "../assets/search-outline.svg";
+import { ReactComponent as SearchIcon } from "../../assets/search-outline.svg";
 
 function SearchForm({ id, type, placeholder, onSearchItem }) {
   const [searchCountry, setSearchCounry] = useState("");
