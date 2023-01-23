@@ -1,7 +1,17 @@
 import Borders from "./Borders";
 
 function CountryDetailedData({ country }) {
-    console.log(country.currencies)
+  // Native Name
+  const nativeName = Object.entries(country.name.nativeName);
+
+  // Capital
+  const capital = Object.entries(country.capital);
+
+  // Currencies
+  const currencies = Object.entries(country.currencies);
+
+  // Languages
+  const languages = Object.entries(country.languages);
 
   return (
     <div className="w-full flex flex-col gap-4 lg:my-auto lg:gap-6 2xl:gap-16">
@@ -9,7 +19,7 @@ function CountryDetailedData({ country }) {
       <div className="flex flex-col gap-4 lg:flex-row lg:justify-between">
         <div className="container-detailed">
           <p>
-            Native Name: <span>{country.name.common}</span>
+            Native Name: <span>{nativeName.flat(1)[1].official}</span>
           </p>
           <p>
             Population:{" "}
@@ -24,7 +34,7 @@ function CountryDetailedData({ country }) {
             Sub Region: <span>{country.subregion}</span>
           </p>
           <p>
-            Capital: <span>capital</span>
+            Capital: <span>{capital.flat(1)[1]}</span>
           </p>
         </div>
         <div className="container-detailed">
@@ -32,10 +42,13 @@ function CountryDetailedData({ country }) {
             Top Level Domain: <span>{country.tld[0]}</span>
           </p>
           <p>
-            Currencies: <span>currencies</span>
+            Currencies: <span>{currencies[0][1].name}</span>
           </p>
           <p>
-            Languanges: <span>languages</span>
+            Languanges:{" "}
+            {languages.flat(1).map((lang) => (
+              <span key={Math.floor(Math.random() * 10000)}>{lang}, </span>
+            ))}
           </p>
         </div>
       </div>
