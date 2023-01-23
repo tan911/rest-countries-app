@@ -17,7 +17,7 @@ function Provider({ children }) {
     }
   };
 
-  // Filtered / Search Country
+  // Filtered / Searched Country
   const operationDatahandler = (data) => {
     setFilterData(data);
   };
@@ -27,10 +27,16 @@ function Provider({ children }) {
     setCountryName(data);
   };
 
+  // Borders
+  const border = (data) => {
+    setCountryName(data);
+  };
+
   const countriesData = {
     countries,
     filterData,
     countryName,
+    border,
     fetchCountries,
     operationDatahandler,
     countryDetailed,
