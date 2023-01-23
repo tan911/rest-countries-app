@@ -8,8 +8,9 @@ import CountriesContext from "../../context/countries";
 function CountryDetailed() {
   const { countries, countryName } = useContext(CountriesContext);
 
+  // The 'countryName' value it's either the country name or the borders name.
   const filterCountryByName = countries.filter((country) => {
-    return country.name.common === countryName;
+    return country.name.common === countryName || country.cca3 === countryName;
   });
 
   return (
