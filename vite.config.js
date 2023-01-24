@@ -4,6 +4,6 @@ import svgr from 'vite-plugin-svgr';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/Countries-API-with-color-theme-switcher/',
+  base: '/rest-countries-app/',
   plugins: [svgr(), react()],
 })
