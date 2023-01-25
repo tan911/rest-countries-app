@@ -9,7 +9,6 @@ function CountryDetailedData({ country }) {
   // Capital
   const capital = Object.entries(country.capital);
 
-
   // Currencies
   const currencies = Object.entries(country.currencies);
 
@@ -37,7 +36,7 @@ function CountryDetailedData({ country }) {
             Sub Region: <span>{country.subregion}</span>
           </p>
           <p>
-            Capital: <span>{capital}</span>
+            Capital: <span>{capital.flat(1)[1]}</span>
           </p>
         </div>
         <div className="container-detailed">
