@@ -8,7 +8,7 @@ import { Provider } from "./context/countries";
 import "./index.scss";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
+  <BrowserRouter basename="/rest-countries-app">
     <Provider>
       <App />
     </Provider>
