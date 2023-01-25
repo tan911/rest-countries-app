@@ -1,11 +1,14 @@
 import Borders from "./Borders";
 
 function CountryDetailedData({ country }) {
+  if(country.population === 0) return;
+
   // Native Name
   const nativeName = Object.entries(country.name.nativeName);
 
   // Capital
   const capital = Object.entries(country.capital);
+
 
   // Currencies
   const currencies = Object.entries(country.currencies);
@@ -34,7 +37,7 @@ function CountryDetailedData({ country }) {
             Sub Region: <span>{country.subregion}</span>
           </p>
           <p>
-            Capital: <span>{capital.flat(1)[1]}</span>
+            Capital: <span>{capital}</span>
           </p>
         </div>
         <div className="container-detailed">
